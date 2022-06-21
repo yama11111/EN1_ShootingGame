@@ -248,6 +248,9 @@ GameObject:
   - component: {fileID: 172643558}
   - component: {fileID: 172643557}
   - component: {fileID: 172643556}
+  - component: {fileID: 172643563}
+  - component: {fileID: 172643562}
+  - component: {fileID: 172643561}
   - component: {fileID: 172643555}
   m_Layer: 0
   m_Name: Enemy1
@@ -361,6 +364,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172643561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172643554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767b4dcb470631d42b88b393c62bd616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4970617473614106532, guid: 25e59e8640aec7a42979ad76fe8cd993, type: 3}
+  bulletWayNum: 10
+  bulletWaySpace: 50
+  bulletWayAxis: 180
+  time: 0.5
+  delayTime: 1
+--- !u!114 &172643562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172643554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9828e7d4672fb543b3f464fd5d74906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4970617473614106532, guid: 25e59e8640aec7a42979ad76fe8cd993, type: 3}
+  bulletWayNum: 10
+  bulletWaySpace: 180
+  time: 0.5
+  delayTime: 1
+--- !u!114 &172643563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172643554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f1612c74ff9db4f8f0699bd6b167eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4970617473614106532, guid: 25e59e8640aec7a42979ad76fe8cd993, type: 3}
+  time: 0.1
+  delayTime: 1
 --- !u!1 &173297790
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +884,7 @@ GameObject:
   - component: {fileID: 1384952630}
   m_Layer: 0
   m_Name: PlayerBody1
-  m_TagString: Player
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -926,7 +979,7 @@ GameObject:
   - component: {fileID: 1460446931}
   m_Layer: 0
   m_Name: PlayerBody3
-  m_TagString: Player
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1021,7 +1074,7 @@ GameObject:
   - component: {fileID: 1523336410}
   m_Layer: 0
   m_Name: PlayerBody2
-  m_TagString: Player
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
