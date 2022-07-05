@@ -11,9 +11,16 @@ public class EnemyBullet : MonoBehaviour
     protected Rigidbody rb;
     protected GameObject enemy;
 
+    Vector3 LeftBottom;
+    Vector3 RightTop;
+
     // Start is called before the first frame update
     void Start()
     {
+        var distance = Vector3.Distance(Camera.main.transform.position, transform.position);
+        LeftBottom = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, distance));
+        RightTop = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, distance));
+
         rb = this.GetComponent<Rigidbody>();
         if (enemy != null)
         {
@@ -31,12 +38,20 @@ public class EnemyBullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        if (transform.position.x <= LeftBottom.x ||
+            transform.position.x >= RightTop.x ||
+            transform.position.z >= RightTop.z ||
+            transform.position.z <= LeftBottom.z)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "PlayerBody")
+        if (other.gameObject.tag == "PlayerCollisionBody")
         {
+            other.GetComponent<Player>().Damage();
             Destroy(this.gameObject);
         }
     }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public int enemyHp = 3;
-    public AudioSource audioSource;
+    public int playerHp = 100;
+
+    public Text playerHpText;
 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +18,16 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyHp <= 0)
+        playerHpText.text = "HP : " + playerHp;
+
+        if (playerHp <= 0)
         {
             Destroy(this.gameObject);
         }
     }
     public void Damage()
     {
-        enemyHp = enemyHp - 1;
-        Debug.Log(enemyHp);
-        audioSource.Play();
+        playerHp = playerHp - 1;
+        Debug.Log(playerHp);
     }
 }
